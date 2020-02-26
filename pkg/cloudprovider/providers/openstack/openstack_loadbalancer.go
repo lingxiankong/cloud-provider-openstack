@@ -1288,7 +1288,6 @@ func (lbaas *LbaasV2) EnsureLoadBalancer(ctx context.Context, clusterName string
 			floatIPOpts := floatingips.CreateOpts{
 				FloatingNetworkID: floatingPool,
 				PortID:            portID,
-				Description:       fmt.Sprintf("Floating IP for Kubernetes external service %s from cluster %s", serviceName, clusterName),
 			}
 
 			if lbClass != nil {

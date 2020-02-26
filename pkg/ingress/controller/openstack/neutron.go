@@ -95,7 +95,6 @@ func (os *OpenStack) EnsureFloatingIP(needDelete bool, portID string, floatingIP
 		floatIPOpts := floatingips.CreateOpts{
 			PortID:            portID,
 			FloatingNetworkID: floatingIPNetwork,
-			Description:       description,
 		}
 		fip, err = floatingips.Create(os.neutron, floatIPOpts).Extract()
 		if err != nil {
