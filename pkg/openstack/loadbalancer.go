@@ -971,7 +971,6 @@ func (lbaas *LbaasV2) getServiceAddress(clusterName string, service *corev1.Serv
 			floatIPOpts := floatingips.CreateOpts{
 				FloatingNetworkID: svcConf.lbPublicNetworkID,
 				PortID:            portID,
-				Description:       fmt.Sprintf("Floating IP for Kubernetes external service %s from cluster %s", serviceName, clusterName),
 			}
 			if svcConf.lbPublicSubnetID != "" {
 				floatIPOpts.SubnetID = svcConf.lbPublicSubnetID
